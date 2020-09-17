@@ -2088,7 +2088,10 @@ if !has_key(g:polyglot_is_disabled, 'octave')
 endif
 
 if !has_key(g:polyglot_is_disabled, 'ocaml')
-  au BufNewFile,BufRead *.eliom,*.eliomi,*.ml,*.ml.cppo,*.ml4,*.mli,*.mli.cppo,*.mlip,*.mll,*.mlp,*.mlt,*.mly,{.,}ocamlinit setf ocaml
+  au BufNewFile,BufRead *.eliom,*.ml,*.ml.cppo,*.ml4,*.mlp,*.mlt,{.,}ocamlinit setf ocaml
+  au BufNewFile,BufRead *.eliomi,*.mli,*.mli.cppo,*.mlip set ft=ocamlinterface
+  au BufNewFile,BufRead *.mll set ft=ocamllexer
+  au BufNewFile,BufRead *.mly set ft=menhir
   au BufNewFile,BufRead *.om,OMakefile,OMakeroot,OMakeroot.in setf omake
   au BufNewFile,BufRead *.opam,*.opam.template,opam setf opam
   au BufNewFile,BufRead _oasis setf oasis
